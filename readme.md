@@ -1,4 +1,30 @@
-# Product Short Facts PrestaShop Module
+# Product Short Facts (Highlight or Bulletpoints) PrestaShop Module
+
+
+**Boost conversions with eye-catching product highlights!**  
+
+---
+
+## ✨ Key Features  
+✅ **Customizable Facts**  
+   - Add short facts like "Free Shipping" or "2-Year Warranty"  
+   - Toggle checkmarks/icons with one click  
+
+✅ **Optimized for Performance**  
+   - Cached templates for faster loading  
+   - Lightweight (No jQuery dependency)  
+
+✅ **Bulk Import**  
+   - Import via CSV/text: `product_id|fact_text`  
+
+✅ **Secure by Design**  
+   - XSS/SQL injection protection  
+   - CSRF tokens in all forms  
+
+✅ **Mobile-Ready**  
+   - Responsive design for all devices  
+
+---
 
 ## Installation Guide
 
