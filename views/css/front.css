@@ -1,0 +1,399 @@
+/**
+ * Product Short Facts CSS
+ * views/css/front.css
+ */
+
+.product-short-facts {
+    margin: 20px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid #28a745;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.product-short-facts:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.short-facts-header {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+}
+
+.short-facts-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.short-facts-title:before {
+    content: "✨";
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.short-facts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.short-fact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px;
+    padding: 8px 0;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.short-fact-item:hover {
+    padding-left: 5px;
+}
+
+.short-fact-item:last-child {
+    margin-bottom: 0;
+}
+
+.short-fact-item:before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: #28a745;
+    transition: height 0.3s ease;
+}
+
+.short-fact-item:hover:before {
+    height: 100%;
+}
+
+.short-fact-checkmark {
+    margin-right: 12px;
+    margin-top: 2px;
+    flex-shrink: 0;
+    animation: checkmarkPulse 2s infinite;
+}
+
+@keyframes checkmarkPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.short-fact-checkmark svg {
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(40, 167, 69, 0.3));
+}
+
+.short-fact-text {
+    flex: 1;
+    line-height: 1.6;
+    color: #495057;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Hook-specific styles */
+.product-short-facts.hook-displayRightColumn,
+.product-short-facts.hook-displayRightColumnProduct {
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e9ecef;
+}
+
+.product-short-facts.hook-displayProductPriceBlock {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+    margin: 10px 0;
+}
+
+.product-short-facts.hook-displayReassurance {
+    background: #d1ecf1;
+    border-left-color: #17a2b8;
+}
+
+.product-short-facts.hook-displayProductButtons {
+    margin: 15px 0;
+    padding: 15px;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+    .product-short-facts {
+        margin: 15px 0;
+        padding: 15px;
+    }
+    
+    .short-facts-title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-short-facts {
+        margin: 12px 0;
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    .short-facts-title {
+        font-size: 15px;
+        margin-bottom: 12px;
+    }
+    
+    .short-fact-text {
+        font-size: 13px;
+    }
+    
+    .short-fact-checkmark {
+        margin-right: 8px;
+    }
+    
+    .short-fact-item {
+        margin-bottom: 10px;
+        padding: 6px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-short-facts {
+        margin: 10px 0;
+        padding: 10px;
+    }
+    
+    .short-facts-title {
+        font-size: 14px;
+    }
+    
+    .short-fact-text {
+        font-size: 12px;
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .product-short-facts {
+        background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+        color: #ecf0f1;
+        border-left-color: #27ae60;
+    }
+    
+    .short-facts-title {
+        color: #ecf0f1;
+    }
+    
+    .short-fact-text {
+        color: #bdc3c7;
+    }
+    
+    .product-short-facts.hook-displayRightColumn,
+    .product-short-facts.hook-displayRightColumnProduct {
+        background: #34495e;
+        border-color: #4a5a6b;
+    }
+}
+
+/* Animation for when facts load */
+.short-fact-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.short-fact-item:nth-child(1) { animation-delay: 0.1s; }
+.short-fact-item:nth-child(2) { animation-delay: 0.2s; }
+.short-fact-item:nth-child(3) { animation-delay: 0.3s; }
+.short-fact-item:nth-child(4) { animation-delay: 0.4s; }
+.short-fact-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Print styles */
+@media print {
+    .product-short-facts {
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #ccc !important;
+        page-break-inside: avoid;
+    }
+    
+    .short-fact-checkmark svg {
+        filter: none;
+    }
+}
+
+.product-short-facts {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+.short-facts-title {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.short-facts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.short-fact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    padding: 5px 0;
+}
+
+.short-fact-item:last-child {
+    margin-bottom: 0;
+}
+
+.short-fact-checkmark {
+    margin-right: 10px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.short-fact-checkmark svg {
+    display: block;
+}
+
+.short-fact-text {
+    flex: 1;
+    line-height: 1.5;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .product-short-facts {
+        margin: 15px 0;
+        padding: 12px;
+    }
+    
+    .short-facts-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .short-fact-text {
+        font-size: 13px;
+    }
+}
+
+/* Theme integration */
+.product-short-facts.right-column {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-short-facts.inline {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-left: 4px solid #28a745;
+}
+
+.product-short-facts {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #28a745;
+}
+
+.short-facts-title {
+    margin: 0 0 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+.short-facts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.short-fact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    padding: 5px 0;
+}
+
+.short-fact-item:last-child {
+    margin-bottom: 0;
+}
+
+.short-fact-checkmark {
+    margin-right: 10px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.short-fact-checkmark svg {
+    display: block;
+}
+
+.short-fact-text {
+    flex: 1;
+    line-height: 1.5;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .product-short-facts {
+        margin: 15px 0;
+        padding: 12px;
+    }
+    
+    .short-facts-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .short-fact-text {
+        font-size: 13px;
+    }
+}
+
+/* Theme integration */
+.product-short-facts.right-column {
+    background: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-short-facts.inline {
+    background: transparent;
+    border: 1px solid #ddd;
+    border-left: 4px solid #28a745;
+}
